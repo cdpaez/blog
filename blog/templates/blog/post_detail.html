@@ -1,0 +1,13 @@
+{% extends "blog/base_generic.html" %}
+
+{% block content %}
+  <article>
+    <h2>{{ object.title }}</h2>
+    <p>{{ object.content }}</p>
+    <p><small>Publicado el {{ object.date_posted }}</small></p>
+  </article>
+
+  <a class="btn btn-primary" href="{% url 'post-update' object.pk %}">Editar</a>
+  <a class="btn btn-danger" href="{% url 'post-delete' object.pk %}">Eliminar</a>
+  <a class="btn btn-secondary" href="{% url 'blog-home' %}">Volver</a>
+{% endblock %}
